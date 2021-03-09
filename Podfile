@@ -6,7 +6,9 @@ target 'Cafe' do
   use_frameworks!
 
   # Pods for cafe
-  pod "Apollo"
+  pod 'Apollo'
+  pod 'SimpleCheckbox'
+  pod 'SnapKit', '~> 5.0.0'
 
 
   target 'CafeTests' do
