@@ -1,0 +1,8 @@
+query FetchMenuItems {
+   menu {
+    id
+    type
+    price
+    description
+  }
+}

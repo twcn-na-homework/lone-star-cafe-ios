@@ -1,0 +1,26 @@
+PODS:
+  - Apollo (0.42.0):
+    - Apollo/Core (= 0.42.0)
+  - Apollo/Core (0.42.0)
+  - Nimble (9.0.0)
+  - Quick (3.1.2)
+
+DEPENDENCIES:
+  - Apollo
+  - Nimble
+  - Quick
+
+SPEC REPOS:
+  trunk:
+    - Apollo
+    - Nimble
+    - Quick
+
+SPEC CHECKSUMS:
+  Apollo: c3f1cc3bfb36e1c4bbb642f44184ad759ad42a87
+  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
+
+PODFILE CHECKSUM: 4157233678960aca354fd57166f19e81cfb79bbd
+
+COCOAPODS: 1.9.3
