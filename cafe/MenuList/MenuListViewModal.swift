@@ -4,6 +4,8 @@ typealias MenuModel = FetchMenuItemsQuery.Data.Menu
 
 class MenuListViewModal {
     
+    var totalViewModel = TotalPreviewViewModal()
+    
     var items: [MenuListItemViewModel] = [] {
         didSet {
             self.output?.viewModelChanged(self)
@@ -24,13 +26,16 @@ class MenuListViewModal {
     
     func toggle(at indexPath: IndexPath) {
         var idx = 0
-        self.items = self.items.map {
+        let newItems: [MenuListItemViewModel] = self.items.map {
             if idx == indexPath.item {
                 $0.isChecked = !$0.isChecked
             }
             idx += 1
             return $0
         }
+
+        self.totalViewModel.numberOfItem = newItems.filter { $0.isChecked }.count
+        self.items = newItems
     }
     
     private func transform(models: [MenuModel]) -> [MenuListItemViewModel] {

@@ -6,9 +6,8 @@ class MenuListViewController: UIViewController {
     
     var didUpdateConstrains = false
     
-    var fixedView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .blue
+    var fixedView: TotalPreviewView = {
+        let view = TotalPreviewView()
         return view
     }()
     
@@ -34,7 +33,7 @@ class MenuListViewController: UIViewController {
                 $0.height.equalTo(70)
                 $0.left.equalToSuperview()
                 $0.right.equalToSuperview()
-                $0.bottom.equalToSuperview()
+                $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             }
                 
             tableView.snp.makeConstraints {
@@ -85,6 +84,7 @@ extension MenuListViewController: UITableViewDelegate, UITableViewDataSource {
 extension MenuListViewController: TableViewModalOutput {
     func viewModelChanged(_ vm: TableViewModel) {
         tableView.reloadData()
+        fixedView.configure(with: viewModel.totalViewModel)
     }
 }
 

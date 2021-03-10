@@ -95,5 +95,6 @@ extension MenuListItem: View {
         
         label.text = viewModel.title
         priceLabel.text = viewModel.price
+        checkbox.isChecked = viewModel.isChecked
     }
 }
