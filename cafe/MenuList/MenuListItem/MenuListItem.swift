@@ -5,6 +5,8 @@ class MenuListItem: UITableViewCell {
     
     static let ident = "menu.list.item"
     
+    var onSelected: ((_ value: Bool) -> Void)?
+    
     var label: UILabel = {
         let label = UILabel(frame: .zero)
         label.text = "PlaceHolder"
@@ -78,11 +80,20 @@ class MenuListItem: UITableViewCell {
             $0.right.equalToSuperview().offset(-16)
             $0.centerY.equalToSuperview()
         }
+        
+        checkbox.valueChanged = { [weak self] (val: Bool) in
+            self?.onSelected?(val)
+        }
     }
 }
 
-extension MenuListItem {
-    func configure(with viewModel: AnyObject) {
+extension MenuListItem: View {
+    func configure(with vm: ViewModel) {
+        guard
+            let viewModel = vm as? MenuListItemViewModel
+            else { return }
         
+        label.text = viewModel.title
+        priceLabel.text = viewModel.price
     }
 }
