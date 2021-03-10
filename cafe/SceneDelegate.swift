@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Cafe
-//
-//  Created by Holly on 2021/3/6.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

@@ -42,11 +42,11 @@ class TotalPreviewView: UIView {
 
 extension TotalPreviewView: View {
     func configure(with vm: ViewModel) {
-        guard let viewModal = vm as? TotalPreviewViewModal else {
+        guard let viewModel = vm as? TotalPreviewViewModel else {
             return
         }
         
-        numberOfItemsLabel.text = "\(viewModal.numberOfItem) Items"
+        numberOfItemsLabel.text = "\(viewModel.numberOfItems) Items"
     }
 }
 

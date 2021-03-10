@@ -18,7 +18,7 @@ class MenuListViewController: UIViewController {
         return tableView
     }()
     
-    var viewModel = MenuListViewModal()
+    var viewModel = MenuListViewModel()
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,8 +80,8 @@ extension MenuListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// Update View Modal
-extension MenuListViewController: TableViewModalOutput {
+// Update View Model
+extension MenuListViewController: TableViewModelOutput {
     func viewModelChanged(_ vm: TableViewModel) {
         tableView.reloadData()
         fixedView.configure(with: viewModel.totalViewModel)

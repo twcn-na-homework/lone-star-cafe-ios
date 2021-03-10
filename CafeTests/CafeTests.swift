@@ -1,10 +1,3 @@
-//
-//  CafeTests.swift
-//  CafeTests
-//
-//  Created by Holly on 2021/3/6.
-//
-
 import XCTest
 
 class CafeTests: XCTestCase {

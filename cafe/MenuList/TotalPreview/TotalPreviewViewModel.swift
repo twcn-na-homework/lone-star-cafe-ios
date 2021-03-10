@@ -1,16 +1,7 @@
 import UIKit
 
-class TotalPreviewViewModal: ViewModel {
+class TotalPreviewViewModel: ViewModel {
     weak var output: ViewModelOutput?
-    var numberOfItem: Int = 0 {
-        didSet {
-            notify()
-        }
-    }
+    var numberOfItems: Int = 0
 }
 
-extension TotalPreviewViewModal {
-    func notify() {
-        self.output?.viewModelChanged(self)
-    }
-}

@@ -1,7 +1,7 @@
 import UIKit
 
 protocol TableViewModel {
-    var output: TableViewModalOutput? { get set }
+    var output: TableViewModelOutput? { get set }
     
     func numberOfSections() -> Int
     
@@ -16,11 +16,11 @@ extension TableViewModel {
     }
 }
 
-protocol TableViewModalOutput: class {
+protocol TableViewModelOutput: class {
     func viewModelChanged(_ vm: TableViewModel)
     func viewModelChanged(_ viewModel: TableViewModel, didChangeItemsAt indexPaths: [IndexPath])
 }
 
-extension TableViewModalOutput {
+extension TableViewModelOutput {
     func viewModelChanged(_ viewModel: TableViewModel, didChangeItemsAt indexPaths: [IndexPath]) {}
 }
