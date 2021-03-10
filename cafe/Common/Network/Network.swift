@@ -17,7 +17,7 @@ class Network {
         let cache = InMemoryNormalizedCache()
         let store = ApolloStore(cache: cache)
         let provider = NetInterceptorProvider(client: client, store: store)
-        let url = URL(string: "https://github.com/twcn-na-homework/lone-star-cafe-ios/")!
+        let url = URL(string: "http://lone-star-cafe.herokuapp.com/graphql")!
         let transport = RequestChainNetworkTransport(interceptorProvider: provider,
                                                      endpointURL: url)
         return ApolloClient(networkTransport: transport, store: store)
