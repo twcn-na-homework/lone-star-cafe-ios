@@ -18,10 +18,13 @@ class MenuListViewController: UIViewController {
         tableView.register(MenuListItem.self, forCellReuseIdentifier: MenuListItem.ident)
         return tableView
     }()
+    
+    var viewModel = MenuListViewModal()
    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+        self.viewModel.fetchData()
     }
     
     override func updateViewConstraints() {
@@ -38,7 +41,7 @@ class MenuListViewController: UIViewController {
                 $0.top.equalToSuperview()
                 $0.left.equalToSuperview()
                 $0.right.equalToSuperview()
-                $0.bottom.equalTo(fixedView.snp.top).offset(-20)
+                $0.bottom.equalTo(fixedView.snp.top)
             }
         }
         
@@ -53,22 +56,35 @@ class MenuListViewController: UIViewController {
         tableView.contentInset = UIEdgeInsets.init(top: 20, left: 0, bottom: 0, right: 0)
         tableView.delegate = self
         tableView.dataSource = self
-        
+        viewModel.output = self
     }
 }
 
 extension MenuListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.numberOfItems(inSection: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: MenuListItem.ident, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: MenuListItem.ident, for: indexPath)
+        
+        if let vm = viewModel.viewModelForItem(at: indexPath),
+            let viewable = cell as? MenuListItem {
+            
+            viewable.configure(with: vm)
+            viewable.onSelected = { [weak self] _ in
+                self?.viewModel.toggle(at: indexPath)
+            }
+        }
+        
+        return cell
     }
 }
 
 // Update View Modal
-extension MenuListViewController {
-    
+extension MenuListViewController: TableViewModalOutput {
+    func viewModelChanged(_ vm: TableViewModel) {
+        tableView.reloadData()
+    }
 }
 
