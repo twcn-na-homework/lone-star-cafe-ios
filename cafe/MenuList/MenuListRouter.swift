@@ -15,7 +15,7 @@ class MenuListRouter {
 extension MenuListRouter: MenuListRouterProtocol {
     func openReceipt() {
         guard let hostVC = host else { return }
-        let receipt = ReceiptViewController()
+        let receipt = ReceiptModule.entry()
         PushTransition(viewController: hostVC).open(to: receipt)
     }
 }
