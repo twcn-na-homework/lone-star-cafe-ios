@@ -1,6 +1,6 @@
 import UIKit
 
-protocol TableViewModel {
+protocol TableViewModel: ViewModel {
     var output: TableViewModelOutput? { get set }
     
     func numberOfSections() -> Int

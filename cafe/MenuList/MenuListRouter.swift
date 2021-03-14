@@ -1,21 +1,25 @@
 import UIKit
 
-protocol MenuListRouterProtocol {
+protocol RouterProtocol {
+    var host: UIViewController? { get }
+}
+
+protocol MenuListRouterProtocol: RouterProtocol {
     func openReceipt()
 }
 
 class MenuListRouter {
-    weak var hostViewController: UIViewController?
+    weak var host: UIViewController?
 
     init(host hostVC: UIViewController) {
-        hostViewController = hostVC
+        host = hostVC
     }
 }
 
 extension MenuListRouter: MenuListRouterProtocol {
     func openReceipt() {
-        guard let host = hostViewController else { return }
+        guard let hostVC = host else { return }
         let receipt = InvoiceViewController()
-        PushTransition(viewController: host).open(to: receipt)
+        PushTransition(viewController: hostVC).open(to: receipt)
     }
 }

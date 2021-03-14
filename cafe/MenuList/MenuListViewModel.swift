@@ -44,7 +44,6 @@ class MenuListViewModel {
 }
 
 extension MenuListViewModel: TableViewModel {
-
     func numberOfItems(inSection section: Int) -> Int {
         return items.count
     }

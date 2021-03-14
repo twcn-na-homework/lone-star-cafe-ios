@@ -2,8 +2,10 @@ import UIKit
 import SnapKit
 
 class MenuListViewController: UIViewController {
+    private var didUpdateConstrains = false
 
-    var didUpdateConstrains = false
+    var viewModel: MenuListViewModel?
+    var router: MenuListRouterProtocol?
 
     private lazy var fixedView: TotalPreviewView = {
         let view = TotalPreviewView()
@@ -21,14 +23,10 @@ class MenuListViewController: UIViewController {
         return tableView
     }()
 
-    var viewModel = MenuListViewModel()
-    var router: MenuListRouterProtocol!
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        router = MenuListRouter(host: self)
-        self.setupUI()
-        self.viewModel.fetchData()
+        setupUI()
+        viewModel?.fetchData()
     }
 
     override func updateViewConstraints() {
@@ -56,24 +54,23 @@ class MenuListViewController: UIViewController {
         view.addSubview(tableView)
         view.addSubview(fixedView)
         view.setNeedsUpdateConstraints()
-        viewModel.output = self
+        viewModel?.output = self
     }
 }
 
 extension MenuListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfItems(inSection: section)
+        return viewModel?.numberOfItems(inSection: section) ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MenuListItem.ident, for: indexPath)
 
-        if let vm = viewModel.viewModelForItem(at: indexPath),
+        if let itemVM = viewModel?.viewModelForItem(at: indexPath),
            let viewable = cell as? MenuListItem {
-
-            viewable.configure(with: vm)
+            viewable.configure(with: itemVM)
             viewable.onSelected = { [weak self] _ in
-                self?.viewModel.toggle(at: indexPath)
+                self?.viewModel?.toggle(at: indexPath)
             }
         }
 
@@ -83,7 +80,7 @@ extension MenuListViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MenuListViewController: TotalPreviewViewOutput {
     func onPayClick() {
-        router.openReceipt()
+        router?.openReceipt()
     }
 }
 
@@ -91,6 +88,16 @@ extension MenuListViewController: TotalPreviewViewOutput {
 extension MenuListViewController: TableViewModelOutput {
     func viewModelChanged(_ vm: TableViewModel) {
         tableView.reloadData()
-        fixedView.configure(with: viewModel.totalViewModel)
+
+        if let totalVM = viewModel?.totalViewModel {
+            fixedView.configure(with: totalVM)
+        }
+    }
+}
+
+extension MenuListViewController: View {
+    func configure(with vm: ViewModel, router: RouterProtocol? = nil) {
+        self.viewModel = vm as? MenuListViewModel
+        self.router = router as? MenuListRouter
     }
 }

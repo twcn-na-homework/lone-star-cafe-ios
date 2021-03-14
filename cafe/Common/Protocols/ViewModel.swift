@@ -1,17 +1,17 @@
 import UIKit
 
 protocol ViewModel: class {
-    var output: ViewModelOutput? { get set }
+//    var output: ViewModelOutput? { get set }
 }
 
 extension ViewModel {
-    var output: ViewModelOutput? {
-        set {}
-        get { return nil }
-    }
+//    var output: ViewModelOutput? {
+//        set {}
+//        get { return nil }
+//    }
 }
 
-protocol ViewModelOutput: class {
-    func viewModelChanged(_ vm: ViewModel)
-}
-
+//protocol ViewModelOutput: class {
+//    func viewModelChanged(_ vm: ViewModel)
+//}
+//

@@ -88,7 +88,7 @@ class MenuListItem: UITableViewCell {
 }
 
 extension MenuListItem: View {
-    func configure(with vm: ViewModel) {
+    func configure(with vm: ViewModel, router: RouterProtocol? = nil) {
         guard
             let viewModel = vm as? MenuListItemViewModel
             else { return }
