@@ -7,6 +7,7 @@ class ReceiptViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        viewModel?.fetchDiscounts()
     }
 
     private func setupUI() {
@@ -18,18 +19,24 @@ class ReceiptViewController: UIViewController {
     }
 }
 
-/// Mark: Actions
+/// Mark: - Actions
 extension ReceiptViewController {
     @objc func discountBtnTapped() {
-        router?.showDiscountOptions()
+        router?.showDiscountOptions(title: viewModel?.discountDesc)
     }
 }
 
-/// Mark: ViewProtocol
+/// Mark: - ViewProtocol
 extension ReceiptViewController: View {
     func configure(with vm: ViewModel, router: RouterProtocol?) {
-        self.viewModel = router as? ReceiptViewModel
+        self.viewModel = vm as? ReceiptViewModel
         self.router = router as? ReceiptRouter
     }
 }
 
+/// Mark: - DiscountTypeSelectOutput
+extension  ReceiptViewController: DiscountTypeSelectOutput {
+    func onSelectChanged(state: DiscountType) {
+        // TODO: Finish this logic
+    }
+}

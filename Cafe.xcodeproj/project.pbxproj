@@ -30,6 +30,7 @@
 		EEAD612225F3E47A009B3399 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD612125F3E47A009B3399 /* Network.swift */; };
 		EEAD614625F3EA98009B3399 /* InterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD612525F3E5BE009B3399 /* InterceptorProvider.swift */; };
 		EEAD614C25F3EC35009B3399 /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD614B25F3EC35009B3399 /* ReceiptViewController.swift */; };
+		EED8B51725FE6D8500348FCF /* DiscountSelectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8B51625FE6D8500348FCF /* DiscountSelectProtocol.swift */; };
 		EEF98C5925F78C350064D942 /* MenuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF98C5825F78C350064D942 /* MenuListViewModel.swift */; };
 		EEF98C6625F798150064D942 /* MenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF98C6525F798150064D942 /* MenuListItem.swift */; };
 		EEF98C7925F7CF0B0064D942 /* API.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF98C7825F7CF0B0064D942 /* API.generated.swift */; };
@@ -52,6 +53,7 @@
 		23C77EC70E7E5EC2CFA745EC /* Pods-CafeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeTests.debug.xcconfig"; path = "Target Support Files/Pods-CafeTests/Pods-CafeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5EDA4201E33833FA4A6E2DE2 /* MenuListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListRouter.swift; sourceTree = "<group>"; };
 		5EDA42E57317C075F53C9604 /* ReceiptRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptRouter.swift; sourceTree = "<group>"; };
+		5EDA43185684E192C99E4066 /* FetchDiscounts.graphql */ = {isa = PBXFileReference; lastKnownFileType = file.graphql; path = FetchDiscounts.graphql; sourceTree = "<group>"; };
 		5EDA443896A155E7A9D8A066 /* ReceiptViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptViewModel.swift; sourceTree = "<group>"; };
 		5EDA447199A8943803219C30 /* PushTranstition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTranstition.swift; sourceTree = "<group>"; };
 		5EDA45561374BDB91B18ACA8 /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		EEAD612525F3E5BE009B3399 /* InterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterceptorProvider.swift; sourceTree = "<group>"; };
 		EEAD613C25F3EA43009B3399 /* FetchMenuItems.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FetchMenuItems.graphql; sourceTree = "<group>"; };
 		EEAD614B25F3EC35009B3399 /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
+		EED8B51625FE6D8500348FCF /* DiscountSelectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountSelectProtocol.swift; sourceTree = "<group>"; };
 		EEF98C5825F78C350064D942 /* MenuListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListViewModel.swift; sourceTree = "<group>"; };
 		EEF98C6525F798150064D942 /* MenuListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListItem.swift; sourceTree = "<group>"; };
 		EEF98C7825F7CF0B0064D942 /* API.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.generated.swift; sourceTree = "<group>"; };
@@ -217,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAD613C25F3EA43009B3399 /* FetchMenuItems.graphql */,
+				5EDA43185684E192C99E4066 /* FetchDiscounts.graphql */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -241,6 +245,7 @@
 				5EDA42E57317C075F53C9604 /* ReceiptRouter.swift */,
 				5EDA443896A155E7A9D8A066 /* ReceiptViewModel.swift */,
 				5EDA4BB796C79164216AAE83 /* ReceiptModule.swift */,
+				EED8B51625FE6D8500348FCF /* DiscountSelectProtocol.swift */,
 			);
 			path = Receipt;
 			sourceTree = "<group>";
@@ -496,6 +501,7 @@
 				5EDA4BE55BA067C7F8ABEC13 /* PushTranstition.swift in Sources */,
 				5EDA40D142BA23D0F9B6C380 /* RouterProtocol.swift in Sources */,
 				5EDA4B4D491B18416A5CD431 /* TableViewModel.swift in Sources */,
+				EED8B51725FE6D8500348FCF /* DiscountSelectProtocol.swift in Sources */,
 				5EDA401BC56865E8336E9A45 /* ViewModel.swift in Sources */,
 				5EDA4F0E43B82ED69F9A377A /* View.swift in Sources */,
 				5EDA45D9DB02AD384D3ED486 /* ReceiptRouter.swift in Sources */,

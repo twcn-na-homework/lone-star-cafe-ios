@@ -54,6 +54,125 @@ public enum ItemType: RawRepresentable, Equatable, Hashable, CaseIterable, Apoll
   }
 }
 
+public final class FetchDiscountsQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query FetchDiscounts {
+      discount {
+        __typename
+        code
+        discountPct
+        discountAmount
+        applyOn
+      }
+    }
+    """
+
+  public let operationName: String = "FetchDiscounts"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("discount", type: .nonNull(.list(.nonNull(.object(Discount.selections))))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(discount: [Discount]) {
+      self.init(unsafeResultMap: ["__typename": "Query", "discount": discount.map { (value: Discount) -> ResultMap in value.resultMap }])
+    }
+
+    public var discount: [Discount] {
+      get {
+        return (resultMap["discount"] as! [ResultMap]).map { (value: ResultMap) -> Discount in Discount(unsafeResultMap: value) }
+      }
+      set {
+        resultMap.updateValue(newValue.map { (value: Discount) -> ResultMap in value.resultMap }, forKey: "discount")
+      }
+    }
+
+    public struct Discount: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Discount"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("code", type: .nonNull(.scalar(String.self))),
+          GraphQLField("discountPct", type: .scalar(Int.self)),
+          GraphQLField("discountAmount", type: .scalar(Int.self)),
+          GraphQLField("applyOn", type: .nonNull(.list(.nonNull(.scalar(ItemType.self))))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(code: String, discountPct: Int? = nil, discountAmount: Int? = nil, applyOn: [ItemType]) {
+        self.init(unsafeResultMap: ["__typename": "Discount", "code": code, "discountPct": discountPct, "discountAmount": discountAmount, "applyOn": applyOn])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var code: String {
+        get {
+          return resultMap["code"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "code")
+        }
+      }
+
+      public var discountPct: Int? {
+        get {
+          return resultMap["discountPct"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "discountPct")
+        }
+      }
+
+      public var discountAmount: Int? {
+        get {
+          return resultMap["discountAmount"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "discountAmount")
+        }
+      }
+
+      public var applyOn: [ItemType] {
+        get {
+          return resultMap["applyOn"]! as! [ItemType]
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "applyOn")
+        }
+      }
+    }
+  }
+}
+
 public final class FetchMenuItemsQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
