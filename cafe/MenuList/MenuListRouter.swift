@@ -1,9 +1,5 @@
 import UIKit
 
-protocol RouterProtocol {
-    var host: UIViewController? { get }
-}
-
 protocol MenuListRouterProtocol: RouterProtocol {
     func openReceipt()
 }
@@ -19,7 +15,7 @@ class MenuListRouter {
 extension MenuListRouter: MenuListRouterProtocol {
     func openReceipt() {
         guard let hostVC = host else { return }
-        let receipt = InvoiceViewController()
+        let receipt = ReceiptViewController()
         PushTransition(viewController: hostVC).open(to: receipt)
     }
 }

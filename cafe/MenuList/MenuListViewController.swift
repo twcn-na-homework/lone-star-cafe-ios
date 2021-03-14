@@ -27,6 +27,7 @@ class MenuListViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         viewModel?.fetchData()
+        title = "Lone Star Cafe"
     }
 
     override func updateViewConstraints() {

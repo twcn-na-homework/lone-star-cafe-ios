@@ -1,6 +1,6 @@
 import UIKit
 
-protocol ViewModel: class {
+protocol ViewModel {
 //    var output: ViewModelOutput? { get set }
 }
 
