@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -286,11 +286,11 @@
 			buildConfigurationList = EEAD60D425F3D4E5009B3399 /* Build configuration list for PBXNativeTarget "Cafe" */;
 			buildPhases = (
 				DCE659C6694F45DEA1C661F5 /* [CP] Check Pods Manifest.lock */,
+				EEAD610825F3DC3D009B3399 /* Generate Apollo GraphQL API */,
 				EEAD60BC25F3D4E2009B3399 /* Sources */,
 				EEAD60BD25F3D4E2009B3399 /* Frameworks */,
 				EEAD60BE25F3D4E2009B3399 /* Resources */,
 				17EF1D72358D3A4BE679509E /* [CP] Embed Pods Frameworks */,
-				EEAD610825F3DC3D009B3399 /* Generate Apollo GraphQL API */,
 			);
 			buildRules = (
 			);
@@ -460,7 +460,6 @@
 		EEAD610825F3DC3D009B3399 /* Generate Apollo GraphQL API */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
-			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
 			files = (
 			);
 			inputFileListPaths = (
