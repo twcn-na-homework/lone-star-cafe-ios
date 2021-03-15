@@ -4,7 +4,7 @@ import SnapKit
 class MenuListViewController: UIViewController {
     private var didUpdateConstrains = false
 
-    var viewModel: MenuListViewModel?
+    var viewModel: (MenuListViewModelInput & TableViewModel)?
     var router: MenuListRouterProtocol?
 
     private lazy var fixedView: TotalPreviewView = {
@@ -26,7 +26,7 @@ class MenuListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        viewModel?.fetchData()
+        viewModel?.fetchMenu()
         title = "Lone Star Cafe"
     }
 
@@ -69,10 +69,10 @@ extension MenuListViewController: UITableViewDelegate, UITableViewDataSource {
 
         if let itemVM = viewModel?.viewModelForItem(at: indexPath),
            let viewable = cell as? MenuListItem {
-            viewable.configure(with: itemVM)
             viewable.onSelected = { [weak self] _ in
                 self?.viewModel?.toggle(at: indexPath)
             }
+            viewable.configure(with: itemVM)
         }
 
         return cell
@@ -81,7 +81,8 @@ extension MenuListViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MenuListViewController: TotalPreviewViewOutput {
     func onPayClick() {
-        router?.openReceipt()
+        guard let vm = viewModel else { return }
+        router?.openReceipt(items: vm.selectedItems)
     }
 }
 

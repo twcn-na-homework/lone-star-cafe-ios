@@ -11,6 +11,12 @@ class ReceiptViewModel {
 
     var discountType: DiscountType = .none
 
+    let items: [MenuListViewModel.MenuItem]
+
+    init(selectedItems: [MenuListViewModel.MenuItem]) {
+        items = selectedItems
+    }
+
     private(set) lazy var discount: Discount = {
         return Discount.init(code: "Food", discountPct: 10, discountAmount: 5, applyOn: [.fruits, .snacks, .dishes])
     }()

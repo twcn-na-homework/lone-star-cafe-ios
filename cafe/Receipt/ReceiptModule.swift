@@ -1,8 +1,8 @@
 import UIKit
 
 class ReceiptModule {
-    static func entry () -> UIViewController {
-        let viewModel = ReceiptViewModel()
+    static func entry (items: [MenuListViewModel.MenuItem]) -> UIViewController {
+        let viewModel = ReceiptViewModel(selectedItems: items)
         let vc = ReceiptViewController()
         let router = ReceiptRouter()
 

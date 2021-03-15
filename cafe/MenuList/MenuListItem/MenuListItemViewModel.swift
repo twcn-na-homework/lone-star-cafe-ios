@@ -1,7 +1,7 @@
 
 class MenuListItemViewModel {
     
-    private(set) var menu: MenuModel?
+    private(set) var menu: MenuListViewModel.MenuItem?
     
     var isChecked: Bool = false
     
@@ -14,7 +14,7 @@ class MenuListItemViewModel {
         return "$ \(m.price)"
     }
     
-    init(model: MenuModel) {
+    init(model: MenuListViewModel.MenuItem) {
         menu = model
     }
 }

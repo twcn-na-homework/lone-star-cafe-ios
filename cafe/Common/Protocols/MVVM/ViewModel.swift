@@ -11,7 +11,7 @@ extension ViewModel {
 //    }
 }
 
-//protocol ViewModelOutput: class {
-//    func viewModelChanged(_ vm: ViewModel)
-//}
-//
+protocol ViewModelOutput: class {
+    func viewModelChanged(_ vm: ViewModel)
+}
+

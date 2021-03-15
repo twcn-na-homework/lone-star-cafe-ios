@@ -1,27 +1,54 @@
 import Foundation
 
-typealias MenuModel = FetchMenuItemsQuery.Data.Menu
+protocol MenuListViewModelInput {
+    var totalViewModel: TotalPreviewViewModel { get }
+    func fetchMenu()
+    func toggle(at indexPath: IndexPath)
+    var selectedItems: [MenuListViewModel.MenuItem] { get }
+}
 
 class MenuListViewModel {
+    typealias MenuItem = FetchMenuItemsQuery.Data.Menu
+
     weak var output: TableViewModelOutput?
 
-    var totalViewModel = TotalPreviewViewModel()
-
-    var items: [MenuListItemViewModel] = [] {
-        didSet {
-            self.output?.viewModelChanged(self)
-        }
+    var numberOfSelected: Int {
+        items.filter {
+            $0.isChecked
+        }.count
     }
 
-    func fetchData() {
+
+    private(set) var items: [MenuListItemViewModel] = [] {
+        didSet {
+            output?.viewModelChanged(self)
+        }
+    }
+}
+
+/// Mark: - Input Protocol
+extension MenuListViewModel: MenuListViewModelInput {
+    var totalViewModel: TotalPreviewViewModel {
+        let vm = TotalPreviewViewModel()
+        vm.numberOfItems = numberOfSelected
+        return vm
+    }
+
+    var selectedItems: [MenuItem] {
+        items.filter {
+            $0.isChecked
+        }.map { $0.menu! }
+    }
+
+    func fetchMenu() {
         Network.shared.apollo.fetch(query: FetchMenuItemsQuery()) { result in
             switch result {
             case .success(let graphQLResult):
                 self.items = self.transform(models: graphQLResult.data?.menu ?? [])
             case .failure(let error):
-              print("Failure! Error: \(error)")
+                print("Failure! Error: \(error)")
             }
-          }
+        }
     }
 
     func toggle(at indexPath: IndexPath) {
@@ -34,22 +61,26 @@ class MenuListViewModel {
             return $0
         }
 
-        self.totalViewModel.numberOfItems = newItems.filter { $0.isChecked }.count
         self.items = newItems
     }
 
-    private func transform(models: [MenuModel]) -> [MenuListItemViewModel] {
-        return models.map { MenuListItemViewModel(model: $0) }
+    private func transform(models: [MenuItem]) -> [MenuListItemViewModel] {
+        return models.map {
+            MenuListItemViewModel(model: $0)
+        }
     }
 }
 
+/// Mark: - TableViewModel Protocol
 extension MenuListViewModel: TableViewModel {
     func numberOfItems(inSection section: Int) -> Int {
         return items.count
     }
 
     func viewModelForItem(at indexPath: IndexPath) -> ViewModel? {
-        guard indexPath.item < items.count else { return nil }
+        guard indexPath.item < items.count else {
+            return nil
+        }
         return items[indexPath.item]
     }
 }
