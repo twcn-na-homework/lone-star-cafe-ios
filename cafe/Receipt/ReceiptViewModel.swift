@@ -1,5 +1,6 @@
 protocol ReceiptViewModelInput {
     func fetchDiscounts()
+    func calcPrices() -> ReceiptViewModel.Price
 }
 
 protocol ReceiptViewModelOutput {
@@ -8,6 +9,13 @@ protocol ReceiptViewModelOutput {
 
 class ReceiptViewModel {
     typealias Discount = FetchDiscountsQuery.Data.Discount
+
+    struct Price {
+        let subtotal: Float
+        let discount: Float
+        let tax: Float
+        let total: Float
+    }
 
     var discountType: DiscountType = .none
 
@@ -40,6 +48,11 @@ class ReceiptViewModel {
 extension ReceiptViewModel: ReceiptViewModelInput {
     func fetchDiscounts() {
 
+    }
+
+    func calcPrices() -> ReceiptViewModel.Price {
+
+        return Price(subtotal: 0, discount: 0, tax: 0, total: 0)
     }
 }
 

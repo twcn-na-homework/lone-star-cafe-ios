@@ -25,12 +25,12 @@
 		EEAD60C825F3D4E2009B3399 /* MenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD60C725F3D4E2009B3399 /* MenuListViewController.swift */; };
 		EEAD60CD25F3D4E5009B3399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEAD60CC25F3D4E5009B3399 /* Assets.xcassets */; };
 		EEAD60D025F3D4E5009B3399 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAD60CE25F3D4E5009B3399 /* LaunchScreen.storyboard */; };
-		EEAD60E025F3D54B009B3399 /* CafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD60DF25F3D54B009B3399 /* CafeTests.swift */; };
 		EEAD60FB25F3D9F2009B3399 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = EEAD60FA25F3D9F2009B3399 /* schema.json */; };
 		EEAD612225F3E47A009B3399 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD612125F3E47A009B3399 /* Network.swift */; };
 		EEAD614625F3EA98009B3399 /* InterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD612525F3E5BE009B3399 /* InterceptorProvider.swift */; };
 		EEAD614C25F3EC35009B3399 /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD614B25F3EC35009B3399 /* ReceiptViewController.swift */; };
 		EED8B51725FE6D8500348FCF /* DiscountSelectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8B51625FE6D8500348FCF /* DiscountSelectProtocol.swift */; };
+		EED8B51E25FEEA3C00348FCF /* ReceiptViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA446B37633FB7FECD5DD0 /* ReceiptViewModelTests.swift */; };
 		EEF98C5925F78C350064D942 /* MenuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF98C5825F78C350064D942 /* MenuListViewModel.swift */; };
 		EEF98C6625F798150064D942 /* MenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF98C6525F798150064D942 /* MenuListItem.swift */; };
 		EEF98C7925F7CF0B0064D942 /* API.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF98C7825F7CF0B0064D942 /* API.generated.swift */; };
@@ -55,6 +55,7 @@
 		5EDA42E57317C075F53C9604 /* ReceiptRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptRouter.swift; sourceTree = "<group>"; };
 		5EDA43185684E192C99E4066 /* FetchDiscounts.graphql */ = {isa = PBXFileReference; lastKnownFileType = file.graphql; path = FetchDiscounts.graphql; sourceTree = "<group>"; };
 		5EDA443896A155E7A9D8A066 /* ReceiptViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptViewModel.swift; sourceTree = "<group>"; };
+		5EDA446B37633FB7FECD5DD0 /* ReceiptViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptViewModelTests.swift; sourceTree = "<group>"; };
 		5EDA447199A8943803219C30 /* PushTranstition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTranstition.swift; sourceTree = "<group>"; };
 		5EDA45561374BDB91B18ACA8 /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		5EDA47E3F591CEB4B8A3A208 /* MenuListModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListModule.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		EEAD60CF25F3D4E5009B3399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEAD60D125F3D4E5009B3399 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEAD60DD25F3D54B009B3399 /* CafeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CafeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEAD60DF25F3D54B009B3399 /* CafeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeTests.swift; sourceTree = "<group>"; };
 		EEAD60E125F3D54B009B3399 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEAD60FA25F3D9F2009B3399 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		EEAD612125F3E47A009B3399 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -190,8 +190,8 @@
 		EEAD60DE25F3D54B009B3399 /* CafeTests */ = {
 			isa = PBXGroup;
 			children = (
-				EEAD60DF25F3D54B009B3399 /* CafeTests.swift */,
 				EEAD60E125F3D54B009B3399 /* Info.plist */,
+				5EDA446B37633FB7FECD5DD0 /* ReceiptViewModelTests.swift */,
 			);
 			path = CafeTests;
 			sourceTree = "<group>";
@@ -514,7 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEAD60E025F3D54B009B3399 /* CafeTests.swift in Sources */,
+				EED8B51E25FEEA3C00348FCF /* ReceiptViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
