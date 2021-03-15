@@ -16,6 +16,7 @@ class MenuListViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
+        tableView.allowsSelection = false
         tableView.contentInset = UIEdgeInsets.init(top: 20, left: 0, bottom: 0, right: 0)
         tableView.register(MenuListItem.self, forCellReuseIdentifier: MenuListItem.ident)
         tableView.delegate = self

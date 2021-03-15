@@ -15,7 +15,7 @@ class TotalPreviewView: UIView {
 
     private lazy var payButton: UIButton = {
         let btn = UIButton(frame: CGRect.init(x: 0, y: 0, width: 20, height: 20))
-        btn.backgroundColor = .gray
+        btn.backgroundColor = .darkGray
         btn.layer.cornerRadius = 6
         btn.setTitle("Pay", for: .normal)
         btn.setTitleColor(.white, for: .normal)

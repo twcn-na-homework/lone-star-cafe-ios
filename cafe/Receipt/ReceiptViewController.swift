@@ -14,7 +14,7 @@ class ReceiptViewController: UIViewController {
         title = "Receipt"
         view.backgroundColor = .init(red: 0.96, green: 0.96, blue: 0.96, alpha: 1)
 
-        let discount = UIBarButtonItem.init(barButtonSystemItem: .edit, target: self, action: #selector(discountBtnTapped))
+        let discount = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(discountBtnTapped))
         navigationItem.rightBarButtonItem = discount
     }
 }

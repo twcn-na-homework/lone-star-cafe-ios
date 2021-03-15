@@ -6,12 +6,12 @@ class MenuListItemViewModel {
     var isChecked: Bool = false
     
     var title: String {
-        return menu?.description ?? "-"
+        menu?.description ?? "-"
     }
     
     var price: String {
         guard let m = menu else { return "NA"}
-        return "$ \(m.price)"
+        return "$ \(Double(m.price) / 100.0)"
     }
     
     init(model: MenuListViewModel.MenuItem) {

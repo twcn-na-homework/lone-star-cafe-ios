@@ -30,15 +30,15 @@ class ReceiptViewModel {
     }()
 
     var discountDesc: String {
-        let per = Double(discount.discountPct ?? 0) / 100.0
+        let amount = Double(discount.discountAmount ?? 0) / 100.0
         let applyOn = discount.applyOn.map {
             "\($0.rawValue)"
         }.joined(separator: ",").lowercased()
 
         return """
                ============Discount info============
-               percentage: \(per)%
-               amount: \(discount.discountAmount ?? 0)
+               percentage: \(discount.discountAmount ?? 100)%
+               amount: \(amount)
                apply on: \(applyOn)
                ==================================
                """
@@ -51,6 +51,7 @@ extension ReceiptViewModel: ReceiptViewModelInput {
     }
 
     func calcPrices() -> ReceiptViewModel.Price {
+        // TODO: Implement the calc logic here
 
         return Price(subtotal: 0, discount: 0, tax: 0, total: 0)
     }
