@@ -1,17 +1,20 @@
 import UIKit
 
 protocol ReceiptRouterProtocol: RouterProtocol {
-  func showDiscountOptions(title: String?)
+    func showDiscountOptions(title: String?)
 }
 
 class ReceiptRouter: ReceiptRouterProtocol {
     weak var host: UIViewController?
 
     var output: DiscountTypeSelectOutput? {
-        return host as? ReceiptViewController
+        host as? ReceiptViewController
     }
 
     func showDiscountOptions(title: String?) {
+        guard let hostVC = host else {
+            return
+        }
         let actionSheet = UIAlertController(title: "Select Discount Type", message: title, preferredStyle: .actionSheet)
         let percentage = UIAlertAction(title: "Percentage", style: .default) { [weak self] _ in
             self?.output?.onSelectChanged(state: .percentage)
@@ -28,8 +31,8 @@ class ReceiptRouter: ReceiptRouterProtocol {
         actionSheet.addAction(amount)
         actionSheet.addAction(none)
         actionSheet.addAction(dismiss)
-      
-        host?.present(actionSheet, animated: true, completion: nil)
+
+        ModalTransition(viewController: hostVC).open(to: actionSheet)
     }
 }
 

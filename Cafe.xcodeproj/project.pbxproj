@@ -13,6 +13,7 @@
 		5EDA43B0A72FAB7DFAC56C11 /* MenuListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA4201E33833FA4A6E2DE2 /* MenuListRouter.swift */; };
 		5EDA45D9DB02AD384D3ED486 /* ReceiptRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA42E57317C075F53C9604 /* ReceiptRouter.swift */; };
 		5EDA48A5340EE402D0C5A3BE /* TransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA49282B00829E0572A578 /* TransitionProtocol.swift */; };
+		5EDA4A1926A93D4AE0AAE27B /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA463E67B005CF4F24D4F5 /* ModalTransition.swift */; };
 		5EDA4ACD5FD05961AE2F82BB /* MenuListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA47E3F591CEB4B8A3A208 /* MenuListModule.swift */; };
 		5EDA4B4D491B18416A5CD431 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA49451387BE66D91784E5 /* TableViewModel.swift */; };
 		5EDA4BE55BA067C7F8ABEC13 /* PushTranstition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA447199A8943803219C30 /* PushTranstition.swift */; };
@@ -59,6 +60,7 @@
 		5EDA446B37633FB7FECD5DD0 /* ReceiptViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptViewModelTests.swift; sourceTree = "<group>"; };
 		5EDA447199A8943803219C30 /* PushTranstition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTranstition.swift; sourceTree = "<group>"; };
 		5EDA45561374BDB91B18ACA8 /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		5EDA463E67B005CF4F24D4F5 /* ModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
 		5EDA47E3F591CEB4B8A3A208 /* MenuListModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListModule.swift; sourceTree = "<group>"; };
 		5EDA47F5FE976CA6DFE0661F /* Collection+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Core.swift"; sourceTree = "<group>"; };
 		5EDA49282B00829E0572A578 /* TransitionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionProtocol.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				5EDA49282B00829E0572A578 /* TransitionProtocol.swift */,
 				5EDA447199A8943803219C30 /* PushTranstition.swift */,
+				5EDA463E67B005CF4F24D4F5 /* ModalTransition.swift */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				5EDA4DB06D7E44ADC05A8913 /* ReceiptViewModel.swift in Sources */,
 				5EDA4D8D2307529B5B870EA5 /* ReceiptModule.swift in Sources */,
 				5EDA4CFA56A7C050292BBFB3 /* Collection+Core.swift in Sources */,
+				5EDA4A1926A93D4AE0AAE27B /* ModalTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
