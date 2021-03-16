@@ -16,6 +16,7 @@
 		5EDA4ACD5FD05961AE2F82BB /* MenuListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA47E3F591CEB4B8A3A208 /* MenuListModule.swift */; };
 		5EDA4B4D491B18416A5CD431 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA49451387BE66D91784E5 /* TableViewModel.swift */; };
 		5EDA4BE55BA067C7F8ABEC13 /* PushTranstition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA447199A8943803219C30 /* PushTranstition.swift */; };
+		5EDA4CFA56A7C050292BBFB3 /* Collection+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA47F5FE976CA6DFE0661F /* Collection+Core.swift */; };
 		5EDA4D8D2307529B5B870EA5 /* ReceiptModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA4BB796C79164216AAE83 /* ReceiptModule.swift */; };
 		5EDA4DB06D7E44ADC05A8913 /* ReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA443896A155E7A9D8A066 /* ReceiptViewModel.swift */; };
 		5EDA4F0E43B82ED69F9A377A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA4A7CF2E54C47E12FC34F /* View.swift */; };
@@ -59,6 +60,7 @@
 		5EDA447199A8943803219C30 /* PushTranstition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTranstition.swift; sourceTree = "<group>"; };
 		5EDA45561374BDB91B18ACA8 /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		5EDA47E3F591CEB4B8A3A208 /* MenuListModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListModule.swift; sourceTree = "<group>"; };
+		5EDA47F5FE976CA6DFE0661F /* Collection+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Core.swift"; sourceTree = "<group>"; };
 		5EDA49282B00829E0572A578 /* TransitionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionProtocol.swift; sourceTree = "<group>"; };
 		5EDA49451387BE66D91784E5 /* TableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		5EDA4A7CF2E54C47E12FC34F /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -151,6 +153,14 @@
 			path = Transition;
 			sourceTree = "<group>";
 		};
+		5EDA494D7C150E6011DF2A62 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5EDA47F5FE976CA6DFE0661F /* Collection+Core.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		EEAD60B725F3D4E2009B3399 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +211,7 @@
 			children = (
 				EEF98C7C25F7D4A30064D942 /* Protocols */,
 				EEAD60FF25F3DB3C009B3399 /* Network */,
+				5EDA494D7C150E6011DF2A62 /* extensions */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -506,6 +517,7 @@
 				5EDA45D9DB02AD384D3ED486 /* ReceiptRouter.swift in Sources */,
 				5EDA4DB06D7E44ADC05A8913 /* ReceiptViewModel.swift in Sources */,
 				5EDA4D8D2307529B5B870EA5 /* ReceiptModule.swift in Sources */,
+				5EDA4CFA56A7C050292BBFB3 /* Collection+Core.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

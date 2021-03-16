@@ -52,16 +52,14 @@ extension MenuListViewModel: MenuListViewModelInput {
     }
 
     func toggle(at indexPath: IndexPath) {
-        var idx = 0
-        let newItems: [MenuListItemViewModel] = self.items.map {
+        let newItems: [MenuListItemViewModel] = items.mapWithIndex { (e, idx) in
             if idx == indexPath.item {
-                $0.isChecked = !$0.isChecked
+                e.isChecked = !e.isChecked
             }
-            idx += 1
-            return $0
+            return e
         }
 
-        self.items = newItems
+        items = newItems
     }
 
     private func transform(models: [MenuItem]) -> [MenuListItemViewModel] {
@@ -74,7 +72,7 @@ extension MenuListViewModel: MenuListViewModelInput {
 /// Mark: - TableViewModel Protocol
 extension MenuListViewModel: TableViewModel {
     func numberOfItems(inSection section: Int) -> Int {
-        return items.count
+        items.count
     }
 
     func viewModelForItem(at indexPath: IndexPath) -> ViewModel? {
