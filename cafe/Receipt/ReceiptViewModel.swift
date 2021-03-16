@@ -37,7 +37,7 @@ class ReceiptViewModel {
 
         return """
                ============Discount info============
-               percentage: \(discount.discountAmount ?? 100)%
+               percentage: \(discount.discountPct ?? 100)%
                amount: \(amount)
                apply on: \(applyOn)
                ==================================
