@@ -7,7 +7,7 @@ class MenuListViewController: UIViewController {
     var viewModel: (MenuListViewModelInput & TableViewModel)?
     var router: MenuListRouterProtocol?
 
-    private lazy var fixedView: TotalPreviewView = {
+    private lazy var totalView: TotalPreviewView = {
         let view = TotalPreviewView()
         view.output = self
         return view
@@ -28,13 +28,12 @@ class MenuListViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         viewModel?.fetchMenu()
-        title = "Lone Star Cafe"
     }
 
     override func updateViewConstraints() {
         if (!didUpdateConstrains) {
             didUpdateConstrains = true
-            fixedView.snp.makeConstraints {
+            totalView.snp.makeConstraints {
                 $0.height.equalTo(70)
                 $0.left.equalToSuperview()
                 $0.right.equalToSuperview()
@@ -45,7 +44,7 @@ class MenuListViewController: UIViewController {
                 $0.top.equalToSuperview()
                 $0.left.equalToSuperview()
                 $0.right.equalToSuperview()
-                $0.bottom.equalTo(fixedView.snp.top)
+                $0.bottom.equalTo(totalView.snp.top)
             }
         }
 
@@ -54,9 +53,9 @@ class MenuListViewController: UIViewController {
 
     func setupUI() {
         view.addSubview(tableView)
-        view.addSubview(fixedView)
+        view.addSubview(totalView)
         view.setNeedsUpdateConstraints()
-        viewModel?.output = self
+        title = "Lone Star Cafe"
     }
 }
 
@@ -93,7 +92,7 @@ extension MenuListViewController: TableViewModelOutput {
         tableView.reloadData()
 
         if let totalVM = viewModel?.totalViewModel {
-            fixedView.configure(with: totalVM)
+            totalView.configure(with: totalVM)
         }
     }
 }
@@ -102,5 +101,6 @@ extension MenuListViewController: View {
     func configure(with vm: ViewModel, router: RouterProtocol? = nil) {
         self.viewModel = vm as? MenuListViewModel
         self.router = router as? MenuListRouter
+        viewModel?.output = self
     }
 }
