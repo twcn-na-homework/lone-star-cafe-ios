@@ -26,7 +26,7 @@ class ReceiptViewModel {
     }
 
     private(set) lazy var discount: Discount = {
-        return Discount.init(code: "Food", discountPct: 10, discountAmount: 5, applyOn: [.fruits, .snacks, .dishes])
+        Discount.init(code: "Food", discountPct: 10, discountAmount: 150, applyOn: [.fruits, .snacks, .dishes])
     }()
 
     var discountDesc: String {

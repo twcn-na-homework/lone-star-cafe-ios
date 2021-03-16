@@ -63,7 +63,7 @@ extension MenuListViewModel: MenuListViewModelInput {
     }
 
     private func transform(models: [MenuItem]) -> [MenuListItemViewModel] {
-        return models.map {
+        models.map {
             MenuListItemViewModel(model: $0)
         }
     }
