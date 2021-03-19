@@ -9,7 +9,7 @@ target 'Cafe' do
   pod 'Apollo'
   pod 'SimpleCheckbox'
   pod 'SnapKit', '~> 5.0.0'
-
+  pod 'Kingfisher', '~> 6.0'
 
   target 'CafeTests' do
     inherit! :search_paths
