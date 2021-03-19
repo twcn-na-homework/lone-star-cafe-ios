@@ -1,0 +1,6 @@
+framework module Pods_CafeTests {
+  umbrella header "Pods-CafeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
