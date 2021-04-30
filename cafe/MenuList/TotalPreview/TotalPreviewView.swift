@@ -55,7 +55,7 @@ extension TotalPreviewView {
     }
 }
 
-extension TotalPreviewView: View {
+extension TotalPreviewView: ConfigurableView {
     func configure(with vm: ViewModel, router: RouterProtocol? = nil) {
         guard let viewModel = vm as? TotalPreviewViewModel else {
             return

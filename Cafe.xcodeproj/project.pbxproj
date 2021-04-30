@@ -20,7 +20,7 @@
 		5EDA4CFA56A7C050292BBFB3 /* Collection+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA47F5FE976CA6DFE0661F /* Collection+Core.swift */; };
 		5EDA4D8D2307529B5B870EA5 /* ReceiptModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA4BB796C79164216AAE83 /* ReceiptModule.swift */; };
 		5EDA4DB06D7E44ADC05A8913 /* ReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA443896A155E7A9D8A066 /* ReceiptViewModel.swift */; };
-		5EDA4F0E43B82ED69F9A377A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA4A7CF2E54C47E12FC34F /* View.swift */; };
+		5EDA4F0E43B82ED69F9A377A /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA4A7CF2E54C47E12FC34F /* ConfigurableView.swift */; };
 		8C99A3C78696502FEDB7F54B /* Pods_CafeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7BB3C8FE85CF66B114ABB3F /* Pods_CafeTests.framework */; };
 		EEAD60C425F3D4E2009B3399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD60C325F3D4E2009B3399 /* AppDelegate.swift */; };
 		EEAD60C625F3D4E2009B3399 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD60C525F3D4E2009B3399 /* SceneDelegate.swift */; };
@@ -65,7 +65,7 @@
 		5EDA47F5FE976CA6DFE0661F /* Collection+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Core.swift"; sourceTree = "<group>"; };
 		5EDA49282B00829E0572A578 /* TransitionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionProtocol.swift; sourceTree = "<group>"; };
 		5EDA49451387BE66D91784E5 /* TableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
-		5EDA4A7CF2E54C47E12FC34F /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		5EDA4A7CF2E54C47E12FC34F /* ConfigurableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		5EDA4BB796C79164216AAE83 /* ReceiptModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptModule.swift; sourceTree = "<group>"; };
 		5EDA4CFF7DA60920DF215FE5 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		63CA3BF9EC847977903E92E4 /* Pods-Cafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cafe.debug.xcconfig"; path = "Target Support Files/Pods-Cafe/Pods-Cafe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 			children = (
 				5EDA49451387BE66D91784E5 /* TableViewModel.swift */,
 				5EDA4CFF7DA60920DF215FE5 /* ViewModel.swift */,
-				5EDA4A7CF2E54C47E12FC34F /* View.swift */,
+				5EDA4A7CF2E54C47E12FC34F /* ConfigurableView.swift */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -516,7 +516,7 @@
 				5EDA4B4D491B18416A5CD431 /* TableViewModel.swift in Sources */,
 				EED8B51725FE6D8500348FCF /* DiscountSelectProtocol.swift in Sources */,
 				5EDA401BC56865E8336E9A45 /* ViewModel.swift in Sources */,
-				5EDA4F0E43B82ED69F9A377A /* View.swift in Sources */,
+				5EDA4F0E43B82ED69F9A377A /* ConfigurableView.swift in Sources */,
 				5EDA45D9DB02AD384D3ED486 /* ReceiptRouter.swift in Sources */,
 				5EDA4DB06D7E44ADC05A8913 /* ReceiptViewModel.swift in Sources */,
 				5EDA4D8D2307529B5B870EA5 /* ReceiptModule.swift in Sources */,

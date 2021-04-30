@@ -27,7 +27,7 @@ extension ReceiptViewController {
 }
 
 /// Mark: - ViewProtocol
-extension ReceiptViewController: View {
+extension ReceiptViewController: ConfigurableView {
     func configure(with vm: ViewModel, router: RouterProtocol?) {
         self.viewModel = vm as? ReceiptViewModel
         self.router = router as? ReceiptRouter

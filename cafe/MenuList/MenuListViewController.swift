@@ -97,7 +97,7 @@ extension MenuListViewController: TableViewModelOutput {
     }
 }
 
-extension MenuListViewController: View {
+extension MenuListViewController: ConfigurableView {
     func configure(with vm: ViewModel, router: RouterProtocol? = nil) {
         self.viewModel = vm as? MenuListViewModel
         self.router = router as? MenuListRouter
