@@ -1,3 +1,5 @@
+import Combine
+
 protocol ReceiptViewModelInput {
     func fetchDiscounts()
     func calcPrices() -> ReceiptViewModel.Price
@@ -19,6 +21,8 @@ class ReceiptViewModel {
 
     var discountType: DiscountType = .none
 
+    @Published var showDiscountChoose = false
+
     let items: [MenuListViewModel.MenuItem]
 
     init(selectedItems: [MenuListViewModel.MenuItem]) {
@@ -32,8 +36,10 @@ class ReceiptViewModel {
     var discountDesc: String {
         let amount = Double(discount.discountAmount ?? 0) / 100.0
         let applyOn = discount.applyOn.map {
-            "\($0.rawValue)"
-        }.joined(separator: ",").lowercased()
+                                          "\($0.rawValue)"
+                                      }
+                                      .joined(separator: ",")
+                                      .lowercased()
 
         return """
                ============Discount info============
@@ -43,6 +49,9 @@ class ReceiptViewModel {
                ==================================
                """
     }
+}
+
+extension ReceiptViewModel: ObservableObject {
 }
 
 extension ReceiptViewModel: ReceiptViewModelInput {
