@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3CC9408128BC7C87ADE4021D /* Pods_Cafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B31FC55E412104A4514768 /* Pods_Cafe.framework */; };
+		5EDA40173BA8CFDAF49BEA91 /* ReceiptItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA4EB1182DE382456EE782 /* ReceiptItem.swift */; };
 		5EDA401BC56865E8336E9A45 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA4CFF7DA60920DF215FE5 /* ViewModel.swift */; };
 		5EDA40D142BA23D0F9B6C380 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA45561374BDB91B18ACA8 /* RouterProtocol.swift */; };
+		5EDA42CA071BD4F5B2E50FF8 /* ReceiptItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA4BEE6291673FC99D24C4 /* ReceiptItemViewModel.swift */; };
 		5EDA43B0A72FAB7DFAC56C11 /* MenuListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA4201E33833FA4A6E2DE2 /* MenuListRouter.swift */; };
 		5EDA45D9DB02AD384D3ED486 /* ReceiptRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA42E57317C075F53C9604 /* ReceiptRouter.swift */; };
 		5EDA48A5340EE402D0C5A3BE /* TransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA49282B00829E0572A578 /* TransitionProtocol.swift */; };
+		5EDA497A4557DEEAEF6AFD73 /* DashLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA48D32EEB042F5A391854 /* DashLine.swift */; };
 		5EDA4A1926A93D4AE0AAE27B /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA463E67B005CF4F24D4F5 /* ModalTransition.swift */; };
 		5EDA4ACD5FD05961AE2F82BB /* MenuListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA47E3F591CEB4B8A3A208 /* MenuListModule.swift */; };
 		5EDA4B4D491B18416A5CD431 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA49451387BE66D91784E5 /* TableViewModel.swift */; };
@@ -64,11 +67,14 @@
 		5EDA466094E0DC6D2A369A9B /* ReceiptView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
 		5EDA47E3F591CEB4B8A3A208 /* MenuListModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListModule.swift; sourceTree = "<group>"; };
 		5EDA47F5FE976CA6DFE0661F /* Collection+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Core.swift"; sourceTree = "<group>"; };
+		5EDA48D32EEB042F5A391854 /* DashLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashLine.swift; sourceTree = "<group>"; };
 		5EDA49282B00829E0572A578 /* TransitionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionProtocol.swift; sourceTree = "<group>"; };
 		5EDA49451387BE66D91784E5 /* TableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		5EDA4A7CF2E54C47E12FC34F /* ConfigurableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		5EDA4BB796C79164216AAE83 /* ReceiptModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptModule.swift; sourceTree = "<group>"; };
+		5EDA4BEE6291673FC99D24C4 /* ReceiptItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptItemViewModel.swift; sourceTree = "<group>"; };
 		5EDA4CFF7DA60920DF215FE5 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		5EDA4EB1182DE382456EE782 /* ReceiptItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptItem.swift; sourceTree = "<group>"; };
 		63CA3BF9EC847977903E92E4 /* Pods-Cafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cafe.debug.xcconfig"; path = "Target Support Files/Pods-Cafe/Pods-Cafe.debug.xcconfig"; sourceTree = "<group>"; };
 		68B31FC55E412104A4514768 /* Pods_Cafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD9E9997EC91A31B63C0996 /* Pods-CafeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafeTests.release.xcconfig"; path = "Target Support Files/Pods-CafeTests/Pods-CafeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +168,15 @@
 				5EDA47F5FE976CA6DFE0661F /* Collection+Core.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		5EDA4A79971305ED427B26B4 /* ReceiptItem */ = {
+			isa = PBXGroup;
+			children = (
+				5EDA4EB1182DE382456EE782 /* ReceiptItem.swift */,
+				5EDA4BEE6291673FC99D24C4 /* ReceiptItemViewModel.swift */,
+			);
+			path = ReceiptItem;
 			sourceTree = "<group>";
 		};
 		EEAD60B725F3D4E2009B3399 = {
@@ -260,6 +275,8 @@
 				5EDA4BB796C79164216AAE83 /* ReceiptModule.swift */,
 				EED8B51625FE6D8500348FCF /* DiscountSelectProtocol.swift */,
 				5EDA466094E0DC6D2A369A9B /* ReceiptView.swift */,
+				5EDA48D32EEB042F5A391854 /* DashLine.swift */,
+				5EDA4A79971305ED427B26B4 /* ReceiptItem */,
 			);
 			path = Receipt;
 			sourceTree = "<group>";
@@ -522,6 +539,9 @@
 				5EDA4CFA56A7C050292BBFB3 /* Collection+Core.swift in Sources */,
 				5EDA4A1926A93D4AE0AAE27B /* ModalTransition.swift in Sources */,
 				5EDA4C4BBE1604162F4E06FB /* ReceiptView.swift in Sources */,
+				5EDA497A4557DEEAEF6AFD73 /* DashLine.swift in Sources */,
+				5EDA40173BA8CFDAF49BEA91 /* ReceiptItem.swift in Sources */,
+				5EDA42CA071BD4F5B2E50FF8 /* ReceiptItemViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

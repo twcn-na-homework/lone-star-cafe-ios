@@ -69,3 +69,6 @@ extension ReceiptViewModel: ReceiptViewModelInput {
 extension ReceiptViewModel: ViewModel {
 
 }
+
+extension MenuListViewModel.MenuItem: Identifiable {
+}
