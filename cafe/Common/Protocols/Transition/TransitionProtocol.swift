@@ -2,7 +2,7 @@ import UIKit
 
 protocol TransitionAnimator: UIViewControllerAnimatedTransitioning {}
 
-protocol TransitionProtocol: class {
+protocol TransitionProtocol: AnyObject {
     var viewController: UIViewController? { get }
     var animator: TransitionAnimator? { get }
 

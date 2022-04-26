@@ -24,6 +24,10 @@
 		EE01A5A128170F470086AF0D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EE01A5A028170F470086AF0D /* Kingfisher */; };
 		EE01A5A428170F630086AF0D /* SimpleCheckbox in Frameworks */ = {isa = PBXBuildFile; productRef = EE01A5A328170F630086AF0D /* SimpleCheckbox */; };
 		EE01A5A72817110D0086AF0D /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = EE01A5A62817110D0086AF0D /* Apollo */; };
+		EE6F92102817B5F90067B30C /* DiscountCodeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F920E2817B5F90067B30C /* DiscountCodeListViewModel.swift */; };
+		EE6F92112817B5F90067B30C /* DiscountCodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F920F2817B5F90067B30C /* DiscountCodeList.swift */; };
+		EE6F92152817C1680067B30C /* DiscountListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F92142817C1680067B30C /* DiscountListController.swift */; };
+		EE6F9217281811D80067B30C /* DiscountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F9216281811D80067B30C /* DiscountService.swift */; };
 		EEAD60C425F3D4E2009B3399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD60C325F3D4E2009B3399 /* AppDelegate.swift */; };
 		EEAD60C625F3D4E2009B3399 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD60C525F3D4E2009B3399 /* SceneDelegate.swift */; };
 		EEAD60C825F3D4E2009B3399 /* MenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD60C725F3D4E2009B3399 /* MenuListViewController.swift */; };
@@ -69,6 +73,10 @@
 		5EDA4A7CF2E54C47E12FC34F /* ConfigurableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		5EDA4BB796C79164216AAE83 /* ReceiptModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptModule.swift; sourceTree = "<group>"; };
 		5EDA4CFF7DA60920DF215FE5 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		EE6F920E2817B5F90067B30C /* DiscountCodeListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscountCodeListViewModel.swift; sourceTree = "<group>"; };
+		EE6F920F2817B5F90067B30C /* DiscountCodeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscountCodeList.swift; sourceTree = "<group>"; };
+		EE6F92142817C1680067B30C /* DiscountListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountListController.swift; sourceTree = "<group>"; };
+		EE6F9216281811D80067B30C /* DiscountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountService.swift; sourceTree = "<group>"; };
 		EEAD60C025F3D4E2009B3399 /* Cafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAD60C325F3D4E2009B3399 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEAD60C525F3D4E2009B3399 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +148,18 @@
 				5EDA47F5FE976CA6DFE0661F /* Collection+Core.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		EE6F920D2817B5F90067B30C /* Discount */ = {
+			isa = PBXGroup;
+			children = (
+				EED8B51625FE6D8500348FCF /* DiscountSelectProtocol.swift */,
+				EE6F920F2817B5F90067B30C /* DiscountCodeList.swift */,
+				EE6F920E2817B5F90067B30C /* DiscountCodeListViewModel.swift */,
+				EE6F92142817C1680067B30C /* DiscountListController.swift */,
+				EE6F9216281811D80067B30C /* DiscountService.swift */,
+			);
+			path = Discount;
 			sourceTree = "<group>";
 		};
 		EEAD60B725F3D4E2009B3399 = {
@@ -231,11 +251,11 @@
 		EEAD614A25F3EBB8009B3399 /* Receipt */ = {
 			isa = PBXGroup;
 			children = (
+				EE6F920D2817B5F90067B30C /* Discount */,
 				EEAD614B25F3EC35009B3399 /* ReceiptViewController.swift */,
 				5EDA42E57317C075F53C9604 /* ReceiptRouter.swift */,
 				5EDA443896A155E7A9D8A066 /* ReceiptViewModel.swift */,
 				5EDA4BB796C79164216AAE83 /* ReceiptModule.swift */,
-				EED8B51625FE6D8500348FCF /* DiscountSelectProtocol.swift */,
 			);
 			path = Receipt;
 			sourceTree = "<group>";
@@ -410,15 +430,19 @@
 				EEF98C7925F7CF0B0064D942 /* API.generated.swift in Sources */,
 				EEF98C5925F78C350064D942 /* MenuListViewModel.swift in Sources */,
 				EEAD60C825F3D4E2009B3399 /* MenuListViewController.swift in Sources */,
+				EE6F92102817B5F90067B30C /* DiscountCodeListViewModel.swift in Sources */,
 				EEF98C9A25F868BA0064D942 /* TotalPreviewView.swift in Sources */,
 				EEF98C9325F7E7860064D942 /* MenuListItemViewModel.swift in Sources */,
 				EEAD60C425F3D4E2009B3399 /* AppDelegate.swift in Sources */,
 				EEF98C6625F798150064D942 /* MenuListItem.swift in Sources */,
 				EEAD60C625F3D4E2009B3399 /* SceneDelegate.swift in Sources */,
 				EEF98CA025F869350064D942 /* TotalPreviewViewModel.swift in Sources */,
+				EE6F92152817C1680067B30C /* DiscountListController.swift in Sources */,
+				EE6F92112817B5F90067B30C /* DiscountCodeList.swift in Sources */,
 				5EDA43B0A72FAB7DFAC56C11 /* MenuListRouter.swift in Sources */,
 				5EDA4ACD5FD05961AE2F82BB /* MenuListModule.swift in Sources */,
 				5EDA48A5340EE402D0C5A3BE /* TransitionProtocol.swift in Sources */,
+				EE6F9217281811D80067B30C /* DiscountService.swift in Sources */,
 				5EDA4BE55BA067C7F8ABEC13 /* PushTranstition.swift in Sources */,
 				5EDA40D142BA23D0F9B6C380 /* RouterProtocol.swift in Sources */,
 				5EDA4B4D491B18416A5CD431 /* TableViewModel.swift in Sources */,
@@ -586,6 +610,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Cafe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,6 +629,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Cafe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

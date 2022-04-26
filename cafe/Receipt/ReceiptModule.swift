@@ -10,4 +10,4 @@ class ReceiptModule {
         router.host = vc
         return vc
     }
-}
+ }
