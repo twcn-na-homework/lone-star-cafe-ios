@@ -3,3 +3,6 @@
 //
 
 import Foundation
+
+class ReceiptViewModelUI {
+}
